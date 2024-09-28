@@ -1,0 +1,17 @@
+all: compile link execute clean
+
+compile:
+	g++ -c ./Interface/type_cube_3D.cpp -o type_cube_3D.o
+	g++ -c ./Solve_Cube/method.cpp -o method.o
+	g++ -c ./Solve_Cube/solve_edge.cpp -o solve_edge.o
+	g++ -c ./Solve_Cube/solve_concer.cpp -o solve_concer.o 
+	g++ -c ./Solve_Cube/type_cube.cpp -o type_cube.o
+
+link:
+	g++ ./Interface/main.cpp type_cube_3D.o type_cube.o method.o solve_edge.o solve_concer.o -o sfml_app -I/mingw64/include -L/mingw64/lib -lsfml-graphics -lsfml-window -lsfml-system -lopengl32 
+
+execute:
+	./sfml_app
+
+clean:
+	del type_cube_3D.o type_cube.o method.o solve_edge.o solve_concer.o sfml_app.exe

@@ -1,0 +1,25 @@
+YELLOW * BLUE * RED * GREEN * ORANGE * WHITE
+******Concer******
+19  :   YBO
+25  :   YGO
+13  :   YRG
+7   :   YBR
+38  :   BRW
+44  :   RGW
+56  :   GOW
+50  :   OBW
+******Edge******
+17  :   YO
+9   :   YG
+5   :   YR
+3   :   YB
+6   :   BR
+12  :   RG
+24  :   GO
+18  :   OB
+36  :   RW
+40  :   RW
+48  :   OW
+34  :   BW
+
+In all test case, I choose Red is front and Yellow is top

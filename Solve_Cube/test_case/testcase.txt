@@ -1,0 +1,109 @@
+1: L2 F U2 L2 B' U2 R2 U2 F U2 B' F' L B' F D R D' U R2
+    // postition ; status
+    int arr1[20] = {2, 1, 2, 2, -1, 2, 2, 2, 1, 2, -1, -1, 1, -1, 1, 1, 1, -1, 1, 2};
+    int arr2[20] = {1, 2, 0, 1,  4, 0, 3, 0, 2, 0,  4,  2, 1,  4, 2, 5, 3,  5, 0, 3};
+        Edge: (YB-BW-WR-OW-RB-RG-WG-GY-BY) (Bi lat)
+                (YR-OY-GO-OB-RY)            (Bi lat)
+        Concer: True 
+
+2: R U2 R' F2 L2 D2 L' U2 F2 D B L F' D' B2 L' D' U'
+    // postition ; status
+    int arr1[20] = {1, 2, -1, 2, 2, 2, -1, 2, 2, 1, 1, 1, -1, -1, 2, -1, -1, -1};
+    int arr2[20] = {3, 0,  3, 2, 1, 5,  1, 0, 2, 5, 4, 1,  2,  5, 4,  1,  5,  0};
+        Edge: (GW-OG-YO-OB-RW-WB-YR-OW-RG-BY-BR-YG-GW) (Khong lat)
+        Concer: (OGW-YBR-RGY-BOW-OYG-BYO-WOG)
+                (WGR-RBW-GRW)
+
+3: F2 R U' B' L F' L2 B U2 R' F2 D' F2 L' F' U R2 D2
+    // postition ; status
+    int arr1[20] = {2, 1, -1, -1, 1, -1, 2, 1, 2, -1, 2, -1, 2, -1, -1, 1, 2, 2};
+    int arr2[20] = {2, 3,  0,  4, 1,  2, 1, 4, 0,  3, 2,  5, 2,  1,  2, 0, 3, 5};
+        Edge: (YB-GR-GO-OY-BW-WG-OB-WR-OW-RB-YR-YG-YB) (Khong lat)
+        Concer: (BRY-RBW-RWG-GWO-GOY-WBO-BYO-YRB)
+                (RGY-GYR)
+
+4: U2 B2 D L2 B2 D' L2 F2 R2 D2 L F' U R' D2 F' L F U'
+    // postition ; status
+    int arr1[20] = {2, 2, 1, 2, 2, -1, 2, 2, 2, 2, 1, -1, 1, -1, 2, -1, 1, 1, -1};
+    int arr2[20] = {0, 4, 5, 1, 4,  5, 1, 2, 3, 5, 1,  2, 0,  3, 5,  2, 1, 2,  0};
+        Edge: (RB-RW-OY-BO-YG-RB)   (Khong lat)
+                (OG-YR-YB-OG)       (Khong lat)
+                (RG-WG-RG)          (Khong lat)
+                (BW-WO-BW)          (Khong lat)
+        Concer: (OBY-BYO)
+                (BOW-GRY-YOG-BWO)
+                (WOG-BWR-RYB-GWO)
+                (GWR-RGW)
+
+5: R' F2 L2 B U F2 U' R D B2 D' F2 L2 R2 D' F R2 D U'
+    // postition ; status
+    int arr1[20] = {-1, 2, 2, 1, 1, 2, -1, 1, 1, 2, -1, 2, 2, 2, -1, 1, 2, 1, -1};
+    int arr2[20] = { 3, 2, 1, 4, 0, 2,  0, 3, 5, 4,  5, 2, 1, 3,  5, 2, 3, 5,  0};
+        Edge: (RY-BY-WO-GW-OY-YG-RY) (Khong lat)
+                (OB-RG-RB-BO)       (Bi lat)
+                (OG)                  (Bi lat)
+                WB, WR              (Da dung)
+        Concer: (YBR-BWR-GYR-OGW-BOW-YGO-OBY-BRY)
+                (RWG-GRW)
+        
+
+6: B2 D' R2 F' D2 U' R' F2 R U L2 F2 R2 U2 B' D' F' U L'
+    // postition ; status
+    int arr1[20] = {2, -1, 2, -1, 2, -1, -1, 2, 1, 1, 2, 2, 2, 2, -1, -1, -1, 1, -1};
+    int arr2[20] = {4,  5, 3,  2, 5,  0,  3, 2, 3, 0, 1, 2, 3, 0,  4,  5,  2, 0,  1};
+        Edge: (OB-GR-YO-WR-WG-GO-YB-OW-BW-BR-YR-YG-OB) (Khong lat)
+        Concer: (RBW-RGY-OGW-YGO-YBR-GRW-YOB-RBW)
+                (WBO-WBO)
+
+
+Mat vang truoc
+Ja : 1;
+Jb : 2;
+T  : 3; 
+Y  : 4;
+
+Edge : (Choose the side of edge in Y interface) (YG)
+    Y3 G1        YG
+    Y1 O1        YO (Y: None; Ja     O: R', B, L, R; T)
+    Y7 B1        YB (Y: None; T      B: R', L', B', R; Ja)
+    Y5 R1        YR (Y: None; Jb     R: R, F', L', R'; T)
+    B3 R7        BR (B: R, F, R'; Jb        R: L'; T)
+    R3 G7        RG (R: U2, R, U2; T        G: U', F', U; T)
+    G3 O7        GO (G: U, B, U'; T         O: U2, R', U2; T)
+    O3 B7        OB (O: L; T                B: U, B', U'; T)
+    W3 G5        WG (W: D2, L2; T           G: R, F', R'; Jb)
+    W5 O5        WO (W: D, L2; T            O: B', L, B; T)
+    W7 B5        WB (W: L2, T               B: L', R, F, R'; Jb)
+    W1 R5        WR (W: D', L2; T           R: F, L', F'; T)
+Edge
+17  YO
+9   YG
+5   YR
+3   YB
+6   BR
+12  RG
+24  GO
+18  BO
+36  WR
+40  WG
+48  WO
+34  WB
+
+Concer: (Choose the side of edge in Y interface) (YOB)
+    Y0 B0 O2    YBO
+    Y2 O0 G2    YOG (Y: R2, D, R2   O: R'       G: R2, F')
+    Y4 R2 G0    YRG (Y: None        R: F, R     G: R', F')
+    Y6 B2 R0    YBR (Y: F', D, R    B: F        R: F2, R)
+    W4 O6 G4    WOG (W: R2          O: D', F'   G: D', R)
+    W2 R4 G6    WRG (W: D, R2       R: R        G: F')
+    W0 R6 B4    WRB (W: F2          R: D, F'    B: D, R)
+    W6 O4 B6    WOB (W: D', R2      O: D2, R    B: D2, F')
+Concer
+19  YOB
+25  YGO
+13  YRG
+7   YBR
+38  WBR
+44  WRG
+56  WGO
+50  WOB
