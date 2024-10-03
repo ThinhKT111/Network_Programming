@@ -4,14 +4,12 @@
 
 #include "type_cube_3D.h"
 
-#include "../Solve_Cube/type_cube.h"
+#include "../../Solve_Cube/type_cube.h"
 
 using namespace std;
 
-int i, j, k;
-
-GLfloat range_of_center = 66.f;
-GLfloat length_cube = 30.f;
+GLfloat range_of_center = 50.f;
+GLfloat length_cube = 23.f;
 
 GLfloat center_location[27][3] = {
     {-range_of_center, range_of_center, -range_of_center},
@@ -77,12 +75,12 @@ GLfloat cube[] =
     length_cube,  length_cube, -length_cube,  0, 1, 0, 1, // green
     length_cube,  length_cube,  length_cube,  0, 1, 0, 1, // green
 
-    -length_cube, -length_cube, -length_cube,  1, 0.5, 0, 1, // orange
-    length_cube, -length_cube, -length_cube,  1, 0.5, 0, 1, // orange
-    -length_cube,  length_cube, -length_cube,  1, 0.5, 0, 1, // orange
-    -length_cube,  length_cube, -length_cube,  1, 0.5, 0, 1, // orange
-    length_cube, -length_cube, -length_cube,  1, 0.5, 0, 1, // orange
-    length_cube,  length_cube, -length_cube,  1, 0.5, 0, 1, // orange
+    -length_cube, -length_cube, -length_cube,  1, 0.45, 0, 1, // orange
+    length_cube, -length_cube, -length_cube,  1, 0.45, 0, 1, // orange
+    -length_cube,  length_cube, -length_cube,  1, 0.45, 0, 1, // orange
+    -length_cube,  length_cube, -length_cube,  1, 0.45, 0, 1, // orange
+    length_cube, -length_cube, -length_cube,  1, 0.45, 0, 1, // orange
+    length_cube,  length_cube, -length_cube,  1, 0.45, 0, 1, // orange
 
     -length_cube, -length_cube, -length_cube,  1, 1, 1, 1, // white
     length_cube, -length_cube, -length_cube,  1, 1, 1, 1, // white
@@ -94,6 +92,7 @@ GLfloat cube[] =
 
 void init_cube3x3_location(GLfloat cube3X3_location[27][108])
 {
+    int i, j;
     for (i=0; i<27; i++)
     {
         for (j=0; j<108; j++)
@@ -105,10 +104,9 @@ void init_cube3x3_location(GLfloat cube3X3_location[27][108])
 
 void init_cube3x3_color(GLfloat cube3x3_color[27][144])
 {
+    int i, j;
     for (i=0; i<27; i++)
     {
-        // for (j=0; j<144; j++)
-        //     cube3x3_color[i][j] = cube[j%4 + 7*(j/4) + 3];
         if (i<9)
         {
             for (j=0; j<24; j++)
@@ -151,7 +149,7 @@ void Transfer_3D_Color(char color, GLfloat color3D[4])
         case 'B': color3D[0] = 0; color3D[1] = 0; color3D[2] = 1; break; // blue
         case 'R': color3D[0] = 1; color3D[1] = 0; color3D[2] = 0; break; // red
         case 'G': color3D[0] = 0; color3D[1] = 1; color3D[2] = 0; break; // green
-        case 'O': color3D[0] = 1; color3D[1] = 0.5; color3D[2] = 0; break; // orange
+        case 'O': color3D[0] = 1; color3D[1] = 0.45; color3D[2] = 0; break; // orange
         case 'W': color3D[0] = 1; color3D[1] = 1; color3D[2] = 1; break; // white
         default: break;
     }
@@ -159,8 +157,7 @@ void Transfer_3D_Color(char color, GLfloat color3D[4])
 
 void Spray_Cube3D(GLfloat cube3x3_color[27][144], Cube bcube)
 {
-    init_cube3x3_color(cube3x3_color);
-
+    int i, j, k;
     GLfloat color3D[4];
     int ordinal_yellow_face[8] = {0, 1, 2, 5, 8, 7, 6, 3};
     int ordinal_blue_face[8] = {0, 3, 6, 15, 24, 21, 18, 9};

@@ -2,7 +2,7 @@
 #include <SFML/OpenGL.hpp>
 #include <iostream>
 
-#include "../Solve_Cube/type_cube.h"
+#include "../../Solve_Cube/type_cube.h"
 
 using namespace std;
 

@@ -1,0 +1,15 @@
+1. Uw' R2 D' Fw u2 r' L' D' Bw2 Lw' F' Uw2 b D Bw2 Uw'
+
+2. F2 r U2 D' Rw' L2 f' Uw Bw' D' Uw2 R' Fw b' Lw Fw'
+
+3. Bw' r2 D Rw2 u2 L' Uw' F2 f D' Bw L2 R Uw2 B' Fw'
+
+4. D' Lw2 Uw2 r F' B R' L' f' D Bw' F2 Rw2 u D' F' Bw
+
+5. F2 Uw' r' D2 Bw Lw2 R2 b' L Uw' F' Rw B2 f Uw2 B'
+
+6. Uw Fw' B' L2 F2 r D' Rw2 b2 Lw F' Bw D2 Uw2 f' D2
+
+Bigger symbol : Outer moves
+Bigger symbol + w : Wide moves (Outer moves + Inner Slice moves)
+Small symbol : Inner Slice moves

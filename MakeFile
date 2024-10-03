@@ -1,17 +1,35 @@
 all: compile link execute clean
 
 compile:
-	g++ -c ./Interface/type_cube_3D.cpp -o type_cube_3D.o
-	g++ -c ./Solve_Cube/method.cpp -o method.o
-	g++ -c ./Solve_Cube/solve_edge.cpp -o solve_edge.o
-	g++ -c ./Solve_Cube/solve_concer.cpp -o solve_concer.o 
+	g++ -c ./Interface/Handle_3D/type_cube_3D.cpp -o type_cube_3D.o
+	g++ -c ./Interface/Handle_3D/type_cube_4X4.cpp -o type_cube_4X4.o
+	g++ -c ./Interface/Handle_3D/type_cube_5X5.cpp -o type_cube_5X5.o
+
+	g++ -c ./Interface/Manager/room_create.cpp -o room_create.o
+	g++ -c ./Interface/Manager/room_manage.cpp -o room_manage.o
+	g++ -c ./Interface/Manager/check_room_id.cpp -o check_room_id.o
+
+	g++ -c ./Interface/Button.cpp -o Button.o
+	g++ -c ./Interface/TextBox.cpp -o TextBox.o
+
+	g++ -c ./Interface/User/main3.cpp -o main3.o
+	g++ -c ./Interface/User/main4.cpp -o main4.o
+	g++ -c ./Interface/User/main5.cpp -o main5.o
+
 	g++ -c ./Solve_Cube/type_cube.cpp -o type_cube.o
+	g++ -c ./Solve_Cube/cube_4X4_2D.cpp -o cube_4X4_2D.o
+	g++ -c ./Solve_Cube/cube_5X5_2D.cpp -o cube_5X5_2D.o
 
 link:
-	g++ ./Interface/main.cpp type_cube_3D.o type_cube.o method.o solve_edge.o solve_concer.o -o sfml_app -I/mingw64/include -L/mingw64/lib -lsfml-graphics -lsfml-window -lsfml-system -lopengl32 
+	g++ ./Interface/main.cpp type_cube_3D.o type_cube_4X4.o type_cube_5X5.o room_create.o room_manage.o check_room_id.o Button.o TextBox.o main3.o main4.o main5.o type_cube.o cube_4X4_2D.o cube_5X5_2D.o -o sfml_app -I/mingw64/include -L/mingw64/lib -lsfml-graphics -lsfml-window -lsfml-system -lopengl32 -lsfml-audio
 
 execute:
 	./sfml_app
 
 clean:
-	del type_cube_3D.o type_cube.o method.o solve_edge.o solve_concer.o sfml_app.exe
+	del type_cube_3D.o type_cube_4X4.o type_cube_5X5.o
+	del room_create.o room_manage.o check_room_id.o
+	del Button.o TextBox.o
+	del main3.o main4.o main5.o
+	del type_cube.o cube_4X4_2D.o cube_5X5_2D.o
+	del sfml_app.exe
