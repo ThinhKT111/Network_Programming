@@ -48,4 +48,11 @@ Provide a concise summary of the project and its main purpose or objective.
     ```bash
     pacman -S mingw-w64-ucrt-x86_64-sfml
 
+5. **Install MAKE tool**
+   ```bash
+   pacman -S make
+
+## How To Run
+   ```bash
+   mingw32-make -f MakeFile
 
